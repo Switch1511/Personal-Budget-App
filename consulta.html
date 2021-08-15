@@ -56,22 +56,27 @@
         <div class="col-md-2">
           <select class="form-control" id="ano">
             <option value="">Ano</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
             <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
           </select>
         </div>
 
         <div class="col-md-2">
           <select class="form-control" id="mes">
             <option value="">Mês</option>
-            <option value="1">Janeiro</option>
-            <option value="2">Fevereiro</option>
-            <option value="3">Março</option>
-            <option value="4">Abril</option>
-            <option value="5">Maio</option>
-            <option value="6">Junho</option>
-            <option value="7">Julho</option>
-            <option value="8">Agosto</option>
-            <option value="9">Setembro</option>
+            <option value="01">Janeiro</option>
+            <option value="02">Fevereiro</option>
+            <option value="03">Março</option>
+            <option value="04">Abril</option>
+            <option value="05">Maio</option>
+            <option value="06">Junho</option>
+            <option value="07">Julho</option>
+            <option value="08">Agosto</option>
+            <option value="09">Setembro</option>
             <option value="10">Outubro</option>
             <option value="11">Novembro</option>
             <option value="12">Dezembro</option>
@@ -103,9 +108,15 @@
           <input type="text" class="form-control" placeholder="Valor" id="valor" />
         </div>
 
-        <div class="col-md-2 d-flex justify-content-end">
+        <div class="col-md-1 d-flex justify-content-end">
           <button type="button" class="btn btn-primary" onclick='pesquisarDespesa()'>
             <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <div class="col-md-1 d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" onclick='carregaListaDespesa()'>
+            <i class="fas fa-redo-alt"></i>
           </button>
         </div>
       </div>
@@ -126,6 +137,25 @@
             <tbody id="listaDespesas">
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="nenhumaDespesaEncontrada" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="modalTitulo_div" class="modal-header text-danger">
+            <h5 class="modal-title" id="modalTitulo">Não encontrado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalDescricao">
+            Nenhuma despesa foi encontrada
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-danger" id="modalButton">Voltar</button>
+          </div>
         </div>
       </div>
     </div>

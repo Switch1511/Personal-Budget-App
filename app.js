@@ -152,7 +152,9 @@ function carregaListaDespesa(despesas = Array()){
     
     if(despesas.length == 0){
         despesas = bd.recuperarTodosRegistros()
+        
     }
+
     let listaDespesas = document.getElementById('listaDespesas')
     listaDespesas.innerHTML = ''
 
@@ -205,4 +207,11 @@ function pesquisarDespesa(){
     let despesas = bd.pesquisar(despesa)
 
     carregaListaDespesa(despesas)
+
+    if(despesas.length == 0){
+        despesas = bd.recuperarTodosRegistros()
+        $('#nenhumaDespesaEncontrada').modal('show')
+    }
 }
+
+
